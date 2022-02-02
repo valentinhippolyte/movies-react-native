@@ -1,8 +1,14 @@
-import { View, StyleSheet, ImageBackground, Text, FlatList } from "react-native";
-import { ActivityIndicator, Colors, Headline } from "react-native-paper";
-import React from "react";
-import { useMovies } from "../hooks/useMovies";
-import CardMovie from "../components/Card";
+import {
+  View,
+  StyleSheet,
+  ImageBackground,
+  Text,
+  FlatList,
+} from 'react-native';
+import { ActivityIndicator, Colors, Headline } from 'react-native-paper';
+import React from 'react';
+import { useMovies } from '../hooks/useMovies';
+import CardMovie from '../components/Card';
 // import { Colors } from "react-native/Libraries/NewAppScreen";
 
 type Props = {};
@@ -17,24 +23,24 @@ const MoviesScreens = (props: Props) => {
     return <Text>something is wrong...</Text>;
   }
 
-  const renderItem = (props: any) => <CardMovie {...props}/>
-  console.log(props)
- 
+  const renderItem = (props: any) => {
+    return <CardMovie {...props} />;
+  };
 
   return (
-      <View>
-        <ImageBackground
-          source={require("../images/header.png")}
-          style={styles.image}
-        >
-          <Headline style={styles.headline}>Liste des Civilisations</Headline>
-        </ImageBackground>
-        <FlatList
-        data={data.civilizations}
-                renderItem={renderItem}
+    <View>
+      <ImageBackground
+        source={require('../images/header.png')}
+        style={styles.image}
+      >
+        <Headline style={styles.headline}>Liste des Films</Headline>
+      </ImageBackground>
+      <FlatList
+        data={data}
+        renderItem={renderItem}
         keyExtractor={(props) => props}
       />
-      </View>
+    </View>
   );
 };
 const styles = StyleSheet.create({
@@ -42,24 +48,24 @@ const styles = StyleSheet.create({
     // flex: 1,
   },
   header: {
-    height: "100%",
-    justifyContent: "center",
+    minHeight: 450,
+    justifyContent: 'center',
   },
   image: {
     flex: 1,
     height: 100,
   },
   title: {
-    color: "white",
+    color: 'white',
     fontSize: 42,
     lineHeight: 126,
-    fontWeight: "bold",
-    textAlign: "center",
+    fontWeight: 'bold',
+    textAlign: 'center',
     backgroundColor: "rgba(0,0,0,0.2)'",
   },
   headline: {
     color: Colors.white,
-    textAlign: "center",
+    textAlign: 'center',
     lineHeight: 150,
   },
 });
