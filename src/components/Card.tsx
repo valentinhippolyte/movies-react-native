@@ -1,6 +1,6 @@
-import { StyleSheet, Image, Text, View } from 'react-native';
-import React from 'react';
-import { Title, Paragraph, Card } from 'react-native-paper';
+import { StyleSheet, Image, Text, View } from "react-native";
+import React from "react";
+import { Title, Paragraph, Card, Button, Portal, Modal } from "react-native-paper";
 
 type CardMovieProps = {
   item: {
@@ -21,16 +21,30 @@ type CardMovieProps = {
 };
 
 const CardMovie = ({ item }: CardMovieProps) => {
+  const [visible, setVisible] = React.useState(false);
+  const showModal = () => setVisible(true);
+  const hideModal = () => setVisible(false);
+  const containerStyle = { backgroundColor: "white", padding: 20 };
   return (
     <Card>
       <Card.Content>
-        <Title>Card title</Title>
-        <Paragraph>Card content</Paragraph>
+        <Portal>
+          <Modal
+            visible={visible}
+            onDismiss={hideModal}
+            contentContainerStyle={containerStyle}
+          >
+            <Text>Description du film ! </Text>
+          </Modal>
+        </Portal>
         <Paragraph>{item.title} </Paragraph>
         <Image
-          style={{ width: '100%', height: 150 }}
+          style={{ width: "100%", height: 150 }}
           source={{ uri: item.image }}
         />
+        <Button mode="outlined" onPress={showModal}>
+          Details
+        </Button>
       </Card.Content>
     </Card>
   );
