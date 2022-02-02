@@ -1,6 +1,6 @@
 # Movies App 
 
-Discover le best movies ever ! 
+Discover the best movies ever ! 
 
 ## How run app ? 
 
