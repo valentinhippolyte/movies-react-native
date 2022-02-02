@@ -4,4 +4,4 @@ Discover le best movies ever !
 
 ## How run app ? 
 
-npm start 
+click on this link =>  https://expo.dev/@valentin_hippolyte/movies
