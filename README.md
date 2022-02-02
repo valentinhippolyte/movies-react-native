@@ -2,6 +2,6 @@
 
 Discover le best movies ever ! 
 
-## Why run app ? 
+## How run app ? 
 
 npm start 
