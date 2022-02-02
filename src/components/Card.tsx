@@ -34,7 +34,9 @@ const CardMovie = ({ item }: CardMovieProps) => {
             onDismiss={hideModal}
             contentContainerStyle={containerStyle}
           >
-            <Text>Description du film ! </Text>
+            <Text>{item.title}</Text>
+            <Paragraph>{item.description}</Paragraph>
+
           </Modal>
         </Portal>
         <Paragraph>{item.title} </Paragraph>
