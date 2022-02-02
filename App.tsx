@@ -1,11 +1,17 @@
-import { StyleSheet, Text, View } from 'react-native';
-import MoviesScreens from './src/screens/MoviesScreens';
+import { StyleSheet, Text, View } from "react-native";
+import MoviesScreens from "./src/screens/MoviesScreens";
+import { QueryClient, QueryClientProvider } from "react-query";
+
+const queryClient = new QueryClient();
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <MoviesScreens></MoviesScreens>
-    </View>
+    <QueryClientProvider client={queryClient}>
+      <View style={styles.container}>
+        <MoviesScreens></MoviesScreens>
+      </View>
+    </QueryClientProvider>
+    
   );
 }
 

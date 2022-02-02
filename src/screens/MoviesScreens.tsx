@@ -1,33 +1,42 @@
-import { View, StyleSheet, ImageBackground, Text} from "react-native";
-import { Headline } from "react-native-paper";
-
-
+import { View, StyleSheet, ImageBackground, Text, FlatList } from "react-native";
+import { ActivityIndicator, Colors, Headline } from "react-native-paper";
 import React from "react";
+import { useMovies } from "../hooks/useMovies";
+import CardMovie from "../components/Card";
+// import { Colors } from "react-native/Libraries/NewAppScreen";
 
 type Props = {};
 
-fetch("https://ghibliapi.herokuapp.com/films", {
-  method: "GET",
-  headers: {
-    Accept: "application/json",
-  },
-});
- 
 const MoviesScreens = (props: Props) => {
+  const { isLoading, isError, data } = useMovies();
+
+  if (isLoading) {
+    return <ActivityIndicator>Is loading</ActivityIndicator>;
+  }
+  if (isError) {
+    return <Text>something is wrong...</Text>;
+  }
+
+  const renderItem = (props: any) => <CardMovie {...props}/>
+  console.log(props)
+ 
+
   return (
-    <View>
-      <View style={styles.header}>
+      <View>
         <ImageBackground
           source={require("../images/header.png")}
           style={styles.image}
         >
-          <Headline style={styles.title}>Movies</Headline>
+          <Headline style={styles.headline}>Liste des Civilisations</Headline>
         </ImageBackground>
+        <FlatList
+        data={data.civilizations}
+                renderItem={renderItem}
+        keyExtractor={(props) => props}
+      />
       </View>
-    </View>
   );
 };
-
 const styles = StyleSheet.create({
   container: {
     // flex: 1,
@@ -47,6 +56,11 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     textAlign: "center",
     backgroundColor: "rgba(0,0,0,0.2)'",
+  },
+  headline: {
+    color: Colors.white,
+    textAlign: "center",
+    lineHeight: 150,
   },
 });
 
