@@ -1,7 +1,7 @@
 # Movies App 
 
-Discover le best movies ever ! 
+Discover the best movies ever ! 
 
-## Why run app ? 
+## How run app ? 
 
-npm start 
+click on this link =>  https://expo.dev/@valentin_hippolyte/movies
