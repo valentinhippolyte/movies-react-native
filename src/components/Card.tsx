@@ -45,7 +45,7 @@ const CardMovie = ({ item }: CardMovieProps) => {
           source={{ uri: item.image }}
         />
         <Button mode="outlined" onPress={showModal}>
-          Details
+          Detailsssss
         </Button>
       </Card.Content>
     </Card>

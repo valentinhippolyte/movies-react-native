@@ -6,10 +6,11 @@ import {
   FlatList,
   SafeAreaView,
 } from 'react-native';
-import { ActivityIndicator, Colors, Headline } from 'react-native-paper';
+import { ActivityIndicator, Colors, Headline, Provider } from 'react-native-paper';
 import React from 'react';
 import { useMovies } from '../hooks/useMovies';
 import CardMovie from '../components/Card';
+import { QueryClient, QueryClientProvider } from "react-query";
 // import { Colors } from "react-native/Libraries/NewAppScreen";
 
 type Props = {};
@@ -27,24 +28,28 @@ const MoviesScreens = (props: Props) => {
   const renderItem = (props: any) => {
     return <CardMovie {...props} />
   };
-
+const queryClient = new QueryClient();
   return (
-    <SafeAreaView>
-      <View>
-        <ImageBackground
-          source={require("../images/header.png")}
-          style={styles.image}
-        >
-          <Headline style={styles.headline}>Liste des Films</Headline>
-        </ImageBackground>
-        <FlatList
-          data={data}
-          renderItem={renderItem}
-          keyExtractor={(props) => props}
-        />
-      </View>
-    </SafeAreaView>
-  )
+    <Provider>
+      <QueryClientProvider client={queryClient}>
+        <SafeAreaView>
+          <View>
+            <ImageBackground
+              source={require("../images/header.png")}
+              style={styles.image}
+            >
+              <Headline style={styles.headline}>Liste des Films</Headline>
+            </ImageBackground>
+            <FlatList
+              data={data}
+              renderItem={renderItem}
+              keyExtractor={(props) => props}
+            />
+          </View>
+        </SafeAreaView>
+      </QueryClientProvider>
+    </Provider>
+  );
 };
 const styles = StyleSheet.create({
   container: {

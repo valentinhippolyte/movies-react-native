@@ -5,6 +5,8 @@ import HomeScreen from './src/screens/HomeScreen';
 import { RootNavigator } from './src/navigation/RootNavigator';
 import { NavigationContainer } from '@react-navigation/native';
 import { StatusBar } from 'expo-status-bar';
+import { Provider } from 'react-native-paper';
+import MoviesScreens from './src/screens/MoviesScreens';
 
 const queryClient = new QueryClient();
 
@@ -18,10 +20,12 @@ export default function App() {
     //   </QueryClientProvider>
     // </Provider>
     // <HomeScreen/>
-    <NavigationContainer>
-      <RootNavigator/>
-      <StatusBar style='auto'/>
-    </NavigationContainer>
+    <QueryClientProvider client={queryClient}>
+      <NavigationContainer>
+        <RootNavigator />
+        <StatusBar style="auto" />
+      </NavigationContainer>
+    </QueryClientProvider>
   );
 }
 
