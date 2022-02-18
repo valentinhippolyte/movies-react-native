@@ -2,7 +2,6 @@ import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import HomeScreen from "../screens/HomeScreen";
 import MoviesScreens from "../screens/MoviesScreens";
-import { NavigationContainer } from "@react-navigation/native";
 
 export type RouteParams = {
   Home : undefined,
