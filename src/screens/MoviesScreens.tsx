@@ -33,13 +33,7 @@ const queryClient = new QueryClient();
     <Provider>
       <QueryClientProvider client={queryClient}>
         <SafeAreaView>
-          <View>
-            <ImageBackground
-              source={require("../images/header.png")}
-              style={styles.image}
-            >
-              <Headline style={styles.headline}>Liste des Films</Headline>
-            </ImageBackground>
+          <View style={{ backgroundColor: "#6b6a67" }}>
             <FlatList
               data={data}
               renderItem={renderItem}

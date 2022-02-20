@@ -1,4 +1,4 @@
-import { StyleSheet, Image, Text, View } from "react-native";
+import { StyleSheet, Image, Text, View, TouchableHighlight } from "react-native";
 import React from "react";
 import { Title, Paragraph, Card, Button, Portal, Modal } from "react-native-paper";
 
@@ -24,31 +24,33 @@ const CardMovie = ({ item }: CardMovieProps) => {
   const [visible, setVisible] = React.useState(false);
   const showModal = () => setVisible(true);
   const hideModal = () => setVisible(false);
-  const containerStyle = { backgroundColor: "white", padding: 20 };
+  const containerStyle = { backgroundColor: "white"};
   return (
-    <Card>
-      <Card.Content>
-        <Portal>
-          <Modal
-            visible={visible}
-            onDismiss={hideModal}
-            contentContainerStyle={containerStyle}
-          >
-            <Text>{item.title}</Text>
-            <Paragraph>{item.description}</Paragraph>
-
-          </Modal>
-        </Portal>
-        <Paragraph>{item.title} </Paragraph>
-        <Image
-          style={{ width: "100%", height: 150 }}
-          source={{ uri: item.image }}
-        />
-        <Button mode="outlined" onPress={showModal}>
-          Details
-        </Button>
-      </Card.Content>
-    </Card>
+    <View
+      style={{ margin: "5%", marginBottom: "5%" }}
+    >
+      <TouchableHighlight onPress={showModal}>
+        <Card style={{ borderRadius: 10 }}>
+          <Card.Content>
+            <Portal>
+              <Modal
+                visible={visible}
+                onDismiss={hideModal}
+                contentContainerStyle={containerStyle}
+              >
+                <Text>{item.title}</Text>
+                <Paragraph>{item.description}</Paragraph>
+              </Modal>
+            </Portal>
+            <Paragraph>{item.title} </Paragraph>
+            <Image
+              style={{ width: "100%", height: 150 }}
+              source={{ uri: item.image }}
+            />
+          </Card.Content>
+        </Card>
+      </TouchableHighlight>
+    </View>
   );
 };
 
