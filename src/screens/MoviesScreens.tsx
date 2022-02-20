@@ -19,8 +19,14 @@ const MoviesScreens = (props: Props) => {
   const { isLoading, isError, data } = useMovies();
 
   if (isLoading) {
-    return <ActivityIndicator>Is loading</ActivityIndicator>;
+    return (
+      <ActivityIndicator style={{ marginTop:"60%" }}>
+        Is loading
+      </ActivityIndicator>
+    );
   }
+
+Source: https://prograide.com/pregunta/18579/reactnative--comment-centrer-le-texte
   if (isError) {
     return <Text>something is wrong...</Text>;
   }

@@ -1,8 +1,9 @@
-import { StyleSheet,View, Text, Button,Image } from "react-native";
+import { StyleSheet,View, Text,Image, StatusBar } from "react-native";
 import React from "react";
 import { NavigationContainer, useNavigation } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { RouteParams } from "../navigation/RootNavigator";
+import { Button } from "react-native-paper";
 
 
 type Props = {};
@@ -12,14 +13,19 @@ const HomeScreen = (props: Props) => {
   const navigation = useNavigation<NativeStackNavigationProp<RouteParams>>();
   return (
     <View style={styles.container}>
-      <Image source={require("../images/movie.png")} />
+      <Image
+        style={{ padding: "10%", marginBottom: "10%" }}
+        source={require("../images/heroku.png")}
+      />
       <Button
-        title={"See movies"}
+        icon="movie"
+        mode="contained"
         onPress={() => {
           navigation.navigate("Movies");
         }}
-      />
-      
+      >
+        See Movies
+      </Button>
     </View>
   );
 };
