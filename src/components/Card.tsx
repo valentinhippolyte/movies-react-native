@@ -1,7 +1,7 @@
-import { StyleSheet, Image, Text, View, TouchableHighlight } from "react-native";
+import { Image, Text, View, TouchableHighlight } from "react-native";
 import React from "react";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
-import { Title, Paragraph, Card, Button, Portal, Modal } from "react-native-paper";
+import { Paragraph, Card, Portal, Modal } from "react-native-paper";
 
 type CardMovieProps = {
   item: {
@@ -76,4 +76,3 @@ const CardMovie = ({ item }: CardMovieProps) => {
 
 export default CardMovie;
 
-const styles = StyleSheet.create({});

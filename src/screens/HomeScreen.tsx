@@ -1,6 +1,6 @@
-import { StyleSheet,View, Text,Image, StatusBar } from "react-native";
+import { StyleSheet,View,Image } from "react-native";
 import React from "react";
-import { NavigationContainer, useNavigation } from "@react-navigation/native";
+import { useNavigation } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { RouteParams } from "../navigation/RootNavigator";
 import { Button } from "react-native-paper";

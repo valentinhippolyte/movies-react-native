@@ -1,7 +1,6 @@
 import {
   View,
   StyleSheet,
-  ImageBackground,
   Text,
   FlatList,
   SafeAreaView,
@@ -11,7 +10,6 @@ import React from 'react';
 import { useMovies } from '../hooks/useMovies';
 import CardMovie from '../components/Card';
 import { QueryClient, QueryClientProvider } from "react-query";
-// import { Colors } from "react-native/Libraries/NewAppScreen";
 
 type Props = {};
 
@@ -25,8 +23,6 @@ const MoviesScreens = (props: Props) => {
       </ActivityIndicator>
     );
   }
-
-Source: https://prograide.com/pregunta/18579/reactnative--comment-centrer-le-texte
   if (isError) {
     return <Text>something is wrong...</Text>;
   }
@@ -54,10 +50,6 @@ const queryClient = new QueryClient();
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-  },
-  header: {
-    // minHeight: 450,
-    // justifyContent: 'center',
   },
   image: {
     flex: 1,

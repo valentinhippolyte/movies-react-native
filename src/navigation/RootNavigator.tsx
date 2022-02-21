@@ -2,8 +2,6 @@ import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import HomeScreen from "../screens/HomeScreen";
 import MoviesScreens from "../screens/MoviesScreens";
-import { bgBlack } from "colors";
-import { Colors } from "react-native/Libraries/NewAppScreen";
 
 export type RouteParams = {
   Home : undefined,
