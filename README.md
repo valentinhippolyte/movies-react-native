@@ -15,6 +15,6 @@ To test the project, you can use the following commands :
 
 ## Try it now :
 
-https://expo.dev/@mexknak/reactAOE
+
 
 Created by Valentin Hippolyte
