@@ -14,7 +14,7 @@ To test the project, you can use the following commands :
 ```npm start```
 
 ## Try it now :
-
+https://expo.dev/@valentin_hippolyte/movies?serviceType=classic&distribution=expo-go
 
 
 Created by Valentin Hippolyte
