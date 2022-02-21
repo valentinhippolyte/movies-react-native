@@ -1,7 +1,20 @@
-# Movies App 
+# Heroku Movies-react-native
 
-Discover the best movies ever ! 
+This is my first react native application. 
 
-## How run app ? 
+## Welcome on my project. 
+This is an application using the API of the Movies "Heroku".
+Discover the list of Heroku films to see their description but also their rating.
 
-click on this link =>  https://expo.dev/@valentin_hippolyte/movies
+API link : https://ghibliapi.herokuapp.com/films
+
+## Setup :
+
+To test the project, you can use the following commands : 
+```npm start```
+
+## Try it now :
+
+https://expo.dev/@mexknak/reactAOE
+
+Created by Valentin Hippolyte
