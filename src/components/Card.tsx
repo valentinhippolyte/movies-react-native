@@ -1,5 +1,6 @@
 import { StyleSheet, Image, Text, View, TouchableHighlight } from "react-native";
 import React from "react";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { Title, Paragraph, Card, Button, Portal, Modal } from "react-native-paper";
 
 type CardMovieProps = {
@@ -26,9 +27,7 @@ const CardMovie = ({ item }: CardMovieProps) => {
   const hideModal = () => setVisible(false);
   const containerStyle = { backgroundColor: "white"};
   return (
-    <View
-      style={{ margin: "5%", marginBottom: "5%" }}
-    >
+    <View style={{ margin: "5%", marginBottom: "5%" }}>
       <TouchableHighlight onPress={showModal}>
         <Card style={{ borderRadius: 10 }}>
           <Card.Content>
@@ -37,12 +36,33 @@ const CardMovie = ({ item }: CardMovieProps) => {
                 visible={visible}
                 onDismiss={hideModal}
                 contentContainerStyle={containerStyle}
+                style={{ margin: 50, borderRadius: 10 }}
               >
-                <Text>{item.title}</Text>
-                <Paragraph>{item.description}</Paragraph>
+                <View style={{ padding: 20 }}>
+                  <Text
+                    style={{
+                      fontWeight: "bold",
+                      fontSize: 20,
+                      borderBottomColor: "black",
+                      borderBottomWidth: 1,
+                    }}
+                  >
+                    {item.title}
+                  </Text>
+                  <Paragraph>{item.description}</Paragraph>
+                  <Text>
+                    Rating : {item.rt_score}{""}
+                    <MaterialCommunityIcons
+                      name="star"
+                      size={24}
+                      color="black"
+                    />{" "}
+                    /100
+                  </Text>
+                </View>
               </Modal>
             </Portal>
-            <Paragraph>{item.title} </Paragraph>
+            <Paragraph style={{ fontWeight: "bold" }}>{item.title} </Paragraph>
             <Image
               style={{ width: "100%", height: 150 }}
               source={{ uri: item.image }}
